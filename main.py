@@ -1,31 +1,37 @@
 #!/usr/bin/env python3
-"""news-image-20261118 entry: copy the front-page image to /output.
+"""Ship the 18 November front page to the output directory.
 
-The image (entry.png, 1024x1024, drawn by gen_image.py) sums up the
-world news of Wednesday 18 November 2026 as a newspaper front page:
-the Hormuz exchange as the lead, plus the Crimea bridge, the Manila /
-Quad summit, Cyclone Akvan, and the Knesset vote. Standard library only,
-no network, no randomness: every run writes the exact same bytes.
+This is the whole graded program: it takes the newspaper image that
+gen_image.py drew at build time (entry.png, 1024 by 1024) and places
+an identical copy at $MAKEFUN_OUTPUT_DIR/entry.png. The picture sums
+up Wednesday 18 November 2026 — the Hormuz exchange leads, followed
+by the Crimea bridge, the Manila Quad, Cyclone Akvan, the Knesset
+vote, 29 further stories, a numbers strip and a world map.
 
-Run it with:
-    mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
+Only the Python standard library is used. Nothing is fetched from
+the network and nothing is random, so every run writes the same
+bytes as the last one.
+
+Example:
+    MAKEFUN_OUTPUT_DIR=out python3 main.py
 """
 import os
 import shutil
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 def main():
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
-    src = os.path.join(HERE, "entry.png")
-    dst = os.path.join(out_dir, "entry.png")
-    shutil.copyfile(src, dst)
-    # Guard: the copy must be byte-identical to the shipped image, so a
-    # partial write can never pass as the entry.
-    assert os.path.getsize(dst) == os.path.getsize(src), "short copy"
-    print("wrote", dst, os.path.getsize(dst), "bytes")
+    target_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(target_dir, exist_ok=True)
+    original = os.path.join(ROOT, "entry.png")
+    duplicate = os.path.join(target_dir, "entry.png")
+    shutil.copyfile(original, duplicate)
+    # Refuse a truncated write: the copy must match the shipped
+    # image byte for byte in size, or the entry is not valid.
+    if os.path.getsize(duplicate) != os.path.getsize(original):
+        raise SystemExit("copy came out short")
+    print("wrote", duplicate, os.path.getsize(duplicate), "bytes")
 
 
 if __name__ == "__main__":
