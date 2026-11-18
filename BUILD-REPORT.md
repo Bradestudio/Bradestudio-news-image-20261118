@@ -137,3 +137,16 @@ Entry v1 cuma 5 berita.
 - Status: push versi upgrade; submit final DITAHAN untuk refresh berita sore
   (paling lambat 19 Nov malam WIB). Bundle resubmit nanti HARUS memuat sesi asli
   552b0f85 + sesi upgrade 408007ba.
+
+## UPGRADE v3 — 18 Nov 2026 ~11:00–12:00 WIB (builder sesi 408007ba)
+Penegasan Andi: pola top 1 BUKAN untuk dicontoh mentah-mentah — harus DIKEMBANGKAN
+sampai LEBIH BAIK dari top 1. Pembeda vs top 1 (quiet-kestrel-73, 33 berita):
+- Strip "BY THE NUMBERS" (tidak ada di top 1): $115,8bn Nvidia · 145 km/h Akvan ·
+  €45bn pinjaman EU · 5% yield AS · 87% lompatan Mayne Pharma.
+- Cakupan LEBIH lengkap: 36 berita (top 1: 33) — tambah ancaman 'dirty bomb' Iran
+  + Trump mungkin bertemu Putin di APEC.
+- Dot peta berkode warna per kawasan + legenda.
+- entry.png v3: 1024×1024, 152.319 byte, sha256 ab1b5e314df4350c99d46262e8f371d47e6e6d74c9b75ec3c1292b281f6b9bd9.
+- Validasi: gen 2x + main.py 2x byte-identik; dicek visual.
+- Status: push versi upgrade v3; submit final DITAHAN untuk refresh berita sore
+  (paling lambat 19 Nov malam WIB).
