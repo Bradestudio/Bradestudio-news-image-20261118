@@ -119,3 +119,21 @@ Hari masih berjalan; sebelum deadline, lakukan ini:
 
 Tidak ada repo yang dibuat dan tidak ada submit yang dilakukan
 dalam sesi build ini.
+
+## UPGRADE v2 — 18 Nov 2026 ~11:00–12:00 WIB (builder sesi 408007ba)
+Perintah Andi: "buat sebagus mungkin, lihat top 1 leaderboard, ambil langkahnya, kembangkan".
+Pola top 1 (quiet-kestrel-73 989.138, artch0 989.056, 2.577 entry) dicek visual langsung:
+koran padat 30+ berita (panel utama + daftar bernomor + peta dunia pin bernomor).
+Entry v1 cuma 5 berita.
+- gen_image.py BARU (disalin dari pola v2 20261117, data cerita 18 Nov): 12 panel utama
+  (Hormuz, Crimea, Manila/Quad, Nvidia, Akvan, Knesset, EU €45bn, UK sanctions,
+  China–Canada, Dhoni, Japan scramble, Estonia) + daftar "ALSO ON" 13–34 + peta dunia.
+  34 cerita total. An-12 Siberia SENGAJA tidak dipakai (berita 17 Nov, bukan 18 Nov);
+  Dhoni dipakai (top 1-2 + halaman berita 18 Nov memuatnya).
+- main.py DIGANTI ke pola copy stdlib-only (seperti 20261117 yang sudah lolos):
+  menyalin entry.png yang digambar gen_image.py. main.py gambar-bitmap lama dihapus.
+- entry.png BARU: 1024×1024, 140.706 byte, sha256 0afae2890bc7742eb4fc75c256bdff5e3bb7176b4e544bfffda29335d9c6bab9.
+- Validasi: gen 2x byte-identik; main.py 2x byte-identik; ukuran < 1 MiB; dicek visual.
+- Status: push versi upgrade; submit final DITAHAN untuk refresh berita sore
+  (paling lambat 19 Nov malam WIB). Bundle resubmit nanti HARUS memuat sesi asli
+  552b0f85 + sesi upgrade 408007ba.
