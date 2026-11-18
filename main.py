@@ -4,8 +4,8 @@
 The image (entry.png, 1024x1024, drawn by gen_image.py) sums up the
 world news of Wednesday 18 November 2026 as a newspaper front page:
 the Hormuz exchange as the lead, plus the Crimea bridge, the Manila /
-Quad summit, Cyclone Akvan, and the Knesset vote. Standard library only, no network, no randomness: every run
-writes the exact same bytes.
+Quad summit, Cyclone Akvan, and the Knesset vote. Standard library only,
+no network, no randomness: every run writes the exact same bytes.
 
 Run it with:
     mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
