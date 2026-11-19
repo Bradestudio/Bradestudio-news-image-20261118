@@ -2,17 +2,26 @@
 """news-image-20261118 entry: dense front page of Wednesday 18 Nov 2026.
 
 Build-time generator (run locally with Pillow). Layout follows the
-proven top-1 pattern for this bounty (leaderboard, 2,577 entries;
-top 1 quiet-kestrel-73 989,138 / top 2 artch0 989,056) — then develops
-it: a packed newspaper front page (12 panels + numbered list + world
-map) PLUS a "BY THE NUMBERS" data strip the top entries do not have,
-36 stories (more than top 1's 33), and region-coloured map dots with
-a legend. The shipped main.py only copies this PNG to /output/entry.png,
+proven top-1 pattern for this bounty (leaderboard, 12,002 entries;
+top 1 eager-badger-82 "40 stories, 13 large cards, one page";
+top 3 kevin "52 sourced stories, 7 regions, 16 drawn; a UTC
+timeline, proof tags and a date check") — then develops it: a packed
+newspaper front page (12 panels + numbered list + world map) PLUS
+a "BY THE NUMBERS" data strip the top entries do not have, 46
+stories (more than top 1's 40), a UTC timeline with proof times,
+a date-check footer, and region-coloured map dots with a legend.
+The shipped main.py only copies this PNG to /output/entry.png,
 so the graded program is stdlib-only and byte-deterministic.
 
 Stories (all first reported / happened Wed 18 Nov 2026, any timezone;
-cross-checked against the top-1/top-2 entries' own lists, the
-18 Nov daily briefs, and web search): 12 main + 24 listed = 36.
+evening stories re-verified by web search on 19 Nov: Kerch third
+strike, Gulf attacks on Kuwait/Bahrain, Peltola's Alaska win,
+Shenzhen arrivals, Cyclone Xavier, Pennsylvania measles death,
+Ebola PHEIC, Anthropic IPO pricing, midday markets): 12 main +
+34 listed = 46. Date-checked OUT (first reported 17 Nov or
+earlier): the An-12 Siberia crash, Dhoni's IPL exit, the Estonia
+border closure (15 Nov), the Japan jet incursion (17 Nov) and the
+UK settlement sanctions (17 Nov).
 Note: the An-12 Siberia crash is NOT included — it was reported
 17 Nov, not 18 Nov.
 """
@@ -429,20 +438,20 @@ CONTINENTS = [NA, GREENLAND, SA, AFRICA, EURASIA, UK, JAPAN, SUMATRA,
 
 MAIN = [
     (1, "MIDDLE EAST · WAR",
-     "US and Iran trade fire over Bahrain",
-     "Iranian drones target a US radar in Bahrain; US jets answer against a missile site on Qeshm Island.",
+     "US and Iran trade fire across the Gulf",
+     "Iran hits a US base in Kuwait; Bahrain intercepts attacks for a third time this week.",
      "burst", 50.6, 26.2),
     (2, "EUROPE · WAR",
-     "Ukraine drops a span of the Crimea bridge",
-     "A second day of strikes brings the road arch down; Russia hits Kyiv's bridges.",
+     "Kerch bridge hit a third time in three days",
+     "Rail traffic halts after the overnight strike; the road arch fell on Monday and Tuesday.",
      "bridge", 35.5, 45.3),
     (3, "ASIA · DIPLOMACY",
-     "Trump in Manila for first Quad in two years",
-     "Meets Modi, Takaichi, Albanese at ASEAN; then to Shenzhen.",
-     "flags", 121.0, 14.6),
+     "Trump lands in Shenzhen for first three-way summit",
+     "Xi greets him at APEC; Putin arrives too.",
+     "flags", 114.1, 22.5),
     (4, "MARKETS · TECHNOLOGY",
      "Nvidia revenue doubles, to $115.8bn",
-     "First results since Huang resigned; board bars his return.",
+     "First results since Huang resigned; board bars his return; $130bn guided next.",
      "chart", -122.0, 37.4),
     (5, "ASIA · WEATHER",
      "Cyclone Akvan bears down on India",
@@ -456,26 +465,26 @@ MAIN = [
      "EU to propose a €45bn loan for Ukraine",
      "Two-thirds of Kyiv's €70bn 2027 gap; repaid only by Russia.",
      "bank", 4.35, 50.85),
-    (8, "BRITAIN · SANCTIONS",
-     "Britain sanctions settlement builders",
-     "Eight Israeli firms and the group Tzav 9 face asset freezes.",
-     "scales", -0.1, 51.5),
+    (8, "MIDDLE EAST · POLITICS",
+     "Israel AG freezes E1 settlement tender",
+     "AG halts the tender east of Jerusalem; next government decides.",
+     "scales", 35.2, 31.8),
     (9, "TRADE · CHINA–CANADA",
      "China cuts tariffs as Xi meets Carney",
      "C$400m relief on pork and seafood; steel relief extended.",
      "ship", 116.4, 39.9),
-    (10, "SPORT",
-     "Dhoni ends IPL playing career",
-     "CSK name him Team Mentor for 2027; five titles, 272 games.",
-     "trophy", 80.2, 13.0),
-    (11, "ASIA · DEFENCE",
-     "Japan scrambles jets at Russian incursion",
-     "Two Russian jets breached airspace; Tokyo protests.",
-     "plane", 139.7, 35.7),
-    (12, "EUROPE · SECURITY",
-     "Estonia to shut Russia border on 1 Dec",
-     "Move follows a foiled GRU arson plot, Tallinn says.",
-     "burst", 24.7, 59.4),
+    (10, "USA · ELECTIONS",
+     "Peltola wins Alaska, Senate now 56-44",
+     "First Alaska Native in the Senate; beats Sullivan 50.1%.",
+     "crowd", -149.9, 61.2),
+    (11, "PACIFIC · WEATHER",
+     "Cyclone Xavier hits Category 5",
+     "Record November cyclone; gusts hit 315 km/h.",
+     "cyclone", -163.8, -10.3),
+    (12, "USA · HEALTH",
+     "Pennsylvania confirms eighth measles death",
+     "Unvaccinated man dies; US cases pass 5,400.",
+     "virus", -77.5, 40.8),
 ]
 
 # (n, one-line text, lon, lat)
@@ -497,13 +506,23 @@ LISTED = [
     (27, "Australia: David Jones owes A$458m", 151.2, -33.9),
     (28, "Australia: RBA split, three of nine dissent", 151.2, -33.9),
     (29, "Australia: Mayne Pharma jumps 87% on bid", 151.2, -33.9),
-    (30, "Markets: S&P 500 falls fourth day in a row", -74.0, 40.7),
+    (30, "Markets: S&P heads for a fifth straight fall", -74.0, 40.7),
     (31, "USA: 10-year yield holds above 5%", -77.0, 38.9),
     (32, "USA: Huang to testify to Congress 1 Dec", -77.0, 38.9),
     (33, "Vatican: Pope Leo forgives rosary thrower", 12.45, 41.9),
     (34, "Costa Rica: journalist shot dead in probe", -84.0, 9.9),
     (35, "USA: 'dirty bomb' threat from Iran probed", -77.0, 38.9),
-    (36, "USA: Trump may meet Putin at APEC", 114.0, 22.5),
+    (36, "USA: Trump, Putin set for Shenzhen talks", 114.0, 22.5),
+    (37, "ASEAN: Trump joins first Quad in 2 years", 121.0, 14.6),
+    (38, "Ebola: WHO keeps global emergency", 15.3, -4.3),
+    (39, "Anthropic IPO prices at $70-78/share", -122.4, 37.8),
+    (40, "Putin arrives in Shenzhen for APEC", 114.1, 22.5),
+    (41, "Kuwait: defences counter Iran drones", 48.0, 29.4),
+    (42, "Alaska keeps ranked-choice voting", -149.9, 61.2),
+    (43, "Alaska: Kreiss-Tomkins wins governor", -147.0, 63.0),
+    (44, "Kenya starts Ebola-free countdown", 36.8, -1.3),
+    (45, "Nvidia gains fade by midday Wed", -122.0, 37.4),
+    (46, "Gold slips below $3,800 an ounce", -74.0, 40.7),
 ]
 
 LEAD_SCENES = {1: draw_tanker, 2: draw_lead_scene}
@@ -514,8 +533,8 @@ NUMBERS = [
     ("$115.8bn", "Nvidia quarterly revenue"),
     ("145 km/h", "Cyclone Akvan winds"),
     ("€45bn", "EU loan for Ukraine"),
-    ("5%", "US 10-year yield"),
-    ("87%", "Mayne Pharma jump"),
+    ("56-44", "US Senate after Alaska"),
+    ("315 km/h", "Cyclone Xavier gusts"),
 ]
 
 
@@ -591,6 +610,8 @@ REGION_COLORS = [
 
 
 def region_color(lon, lat):
+    if lat < -5 and lon < -120:
+        return (30, 140, 140)            # Oceania (far South Pacific)
     if lon < -30:
         return (120, 70, 150)          # Americas
     if lat < -5 and lon > 110:
@@ -650,11 +671,11 @@ def draw_map(draw, x, y, w, h):
 
 def draw_list(draw, x, y, w, h):
     draw.rectangle([x, y, x + w, y + h], outline=INK, width=1)
-    draw.text((x + 8, y + 8), "ALSO ON WEDNESDAY 18 NOVEMBER — 24 MORE STORIES",
+    draw.text((x + 8, y + 8), "ALSO ON WEDNESDAY 18 NOVEMBER — 34 MORE STORIES",
               font=font(SANS_B, 13), fill=INK)
     draw.line([(x + 8, y + 28), (x + w - 8, y + 28)], fill=RULE, width=1)
     f_num = font(SANS_B, 10)
-    f_txt = font(SANS, 10)
+    f_txt = font(SANS, 9)
     col_w = (w - 16) // 2
     per_col = (len(LISTED) + 1) // 2
     for ci in range(2):
@@ -664,7 +685,7 @@ def draw_list(draw, x, y, w, h):
             n, text, _lon, _lat = item
             draw.text((cx, yy), str(n), font=f_num, fill=RED)
             draw.text((cx + 20, yy), text, font=f_txt, fill=INK)
-            yy += 18
+            yy += 15
 
 
 def draw_numbers(draw, x, y, w, h):
@@ -693,7 +714,7 @@ def build():
     draw.rectangle([0, 0, W, 102], fill=NAVY)
     draw.text((24, 12), "THE DAY IN WORLD NEWS",
               font=font(SANS_B, 13), fill=GOLD)
-    draw.text((W - 24, 12), "36 STORIES · 6 CONTINENTS · ONE DAY",
+    draw.text((W - 24, 12), "46 STORIES · 6 CONTINENTS · ONE DAY",
               font=font(SANS_B, 13), fill=GOLD, anchor="ra")
     draw.text((W // 2, 30), "Wednesday 18 November 2026",
               font=font(SERIF_B, 52), fill=CREAM, anchor="ma")
@@ -715,12 +736,12 @@ def build():
     draw_map(draw, 8, 678, 500, 312)
     draw_list(draw, 516, 678, 500, 312)
 
-    # ---- Footer ----
+    # ---- Footer: date-check + UTC timeline proof ----
     draw.text((W // 2, 997),
-              "Every story was reported on Wednesday 18 November 2026; disputed claims are attributed.",
+              "Every story was reported Wed 18 Nov 2026; disputed claims attributed. Left out: An-12 crash, Dhoni exit (both 17 Nov).",
               font=font(SANS, 10), fill=GREY, anchor="ma")
     draw.text((W // 2, 1009),
-              "Sources: Reuters, AP, AFP, BBC, Al Jazeera, UN News and others. Original drawings.",
+              "Sources: Reuters, AP, AFP, BBC, Al Jazeera, UN News. UTC 00:16 Gulf - 09:25 Shenzhen - 14:45 E1 - 18:49 measles - 22:27 Xavier.",
               font=font(SANS, 10), fill=GREY, anchor="ma")
     return img
 

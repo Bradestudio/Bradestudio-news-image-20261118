@@ -150,3 +150,72 @@ sampai LEBIH BAIK dari top 1. Pembeda vs top 1 (quiet-kestrel-73, 33 berita):
 - Validasi: gen 2x + main.py 2x byte-identik; dicek visual.
 - Status: push versi upgrade v3; submit final DITAHAN untuk refresh berita sore
   (paling lambat 19 Nov malam WIB).
+
+---
+
+# v4 — FINAL (19 Nov 2026 ~19:20–19:30 WIB, sesi 7d9c39eb)
+
+Build final sebelum deadline 20 Nov 07:00 WIB. v3 (36 cerita, commit
+501e06b) TIDAK PERNAH disubmit; v4 menggantikannya.
+
+## Riset sore/malam 18 Nov — semua terverifikasi via web search 19 Nov
+
+- Kerch: serangan ke-3 dalam 3 hari, lalu lintas kereta dihentikan
+  (Aksyonov via Reuters/The Guardian, dilaporkan 18 Nov).
+- Teluk: Iran menyerang pangkalan AS di Kuwait (Ali Al Salem) dan
+  Bahrain mencegat serangan ke-3 minggu itu (Reuters, 18 Nov 00:16 UTC).
+- Alaska: Peltola (D) menang 50,1% vs Sullivan 45,8%, Senat jadi
+  56–44; Alaska juga mempertahankan ranked-choice voting dan memilih
+  Kreiss-Tomkins sebagai gubernur (AP/France 24/BBC, 18 Nov).
+- Shenzhen: Trump mendarat 18 Nov, disambut Xi; Putin juga tiba;
+  KTT trilateral pertama AS–China–Rusia dijadwalkan Kamis 19 Nov
+  (SCMP/Korea JoongAng Daily/Demócrata, 18 Nov).
+- Xavier: Kategori 5, hembusan 315 km/jam, rekor siklon November
+  terkuat di Belahan Selatan (Fiji Met/RNZ/1News, 18 Nov).
+- Campak: Pennsylvania mengonfirmasi kematian ke-8 (Reuters, 18 Nov
+  13:49 ET); kasus AS >5.400. Status eliminasi yang hilang adalah
+  17 Nov — TIDAK dipakai sebagai cerita 18 Nov.
+- Ebola: WHO menyatakan 18 Nov wabah tetap darurat kesehatan global
+  (PHEIC); Kenya mulai hitung mundur 42 hari bebas Ebola (UN News /
+  outbreakwatch, 18 Nov).
+- Pasar: S&P menuju penurunan hari ke-5 (midday 18 Nov); Nvidia
+  +3,1% premarket berbalik rugi; emas < $3.800; Anthropic IPO
+  pricing $70–78/saham (18 Nov).
+- Spot-check v3: Nvidia $115,8 miliar + board menolak Huang kembali
+  (18 Nov, TERKONFIRMASI); Knesset Kahana 66–52 (voting Selasa malam,
+  dilaporkan 18 Nov — dipertahankan); EU €45 miliar (Reuters, 18 Nov,
+  TERKONFIRMASI).
+
+## Date-check: cerita yang DIBUANG dari v4 (pertama dilaporkan 17 Nov atau lebih lama)
+
+- Dhoni pensiun IPL (17 Nov) — panel utama v3 #10, diganti Alaska.
+- Estonia tutup perbatasan Rusia (diumumkan 15 Nov).
+- Jepang kerahkan jet atas jet Rusia (insiden Selasa 17 Nov pagi).
+- Sanksi Inggris atas pembangun permukiman (diumumkan 17 Nov) —
+  panel diganti jadi pembekuan tender E1 oleh Jaksa Agung Israel
+  (18 Nov 14:45 UTC).
+
+## Perubahan v4 vs v3
+
+- 46 cerita (12 panel + 34 daftar), naik dari 36. Panel baru:
+  Shenzhen (#3), E1 (#8), Alaska (#10), Xavier (#11), campak (#12).
+- Strip BY THE NUMBERS: $115,8 miliar Nvidia · 145 km/jam Akvan ·
+  €45 miliar EU · 56–44 Senat · 315 km/jam Xavier.
+- Footer: date-check (An-12 + Dhoni 17 Nov dikeluarkan) + timeline
+  UTC (00:16 Teluk · 09:25 Shenzhen · 14:45 E1 · 18:49 campak ·
+  22:27 Xavier).
+- Peta: pin Xavier di Pasifik Selatan dikodekan Oceania (bukan
+  Amerika); pin Alaska ganda diimbangi.
+- main.py ditulis ulang dari nol di sesi ini (fungsi sama:
+  stdlib-only, salin entry.png ke $MAKEFUN_OUTPUT_DIR/entry.png).
+
+## Hasil cek v4
+
+- Regenerasi 2x byte-identik: sha256
+  `ef22bf8d095a98e3c2efaa24aef1e9a3b1e3556acbedcc9b09cc9860b56d076b`
+- Ukuran: 170.577 byte (batas 1.048.576) — lolos
+- Dimensi: 1024×1024 PNG — lolos
+- main.py: `MAKEFUN_OUTPUT_DIR=/tmp/main-test python3 main.py`
+  menulis salinan byte-identik — lolos
+- Cek visual: semua headline + ringkasan terbaca penuh, tidak ada
+  teks terpotong (5 ringkasan dipendekkan setelah cek visual pertama).
